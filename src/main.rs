@@ -1,8 +1,8 @@
 fn main() {
     println!("What is your name?");
-    let input = read_string();
+    let input: String = read_string();
     // println!("Your name is: {}", input);
-    calculate(input);
+    calculate(&input);
 }
 
 fn read_string() -> String {
@@ -13,13 +13,15 @@ fn read_string() -> String {
     input
 }
 
-fn calculate(input: String){
-    let parse_input= input.split(" ");
+fn calculate(input: &str){
+    let parse_input: Vec<&str> = input.split_whitespace().collect();
     
     for part in parse_input{
-        println!("{}", part);
+        let operator = 0;
+        match part {
+             "*" => println!("{}", part),
+             _ => print!("")
+        }
     }
 
-
-    
 }
